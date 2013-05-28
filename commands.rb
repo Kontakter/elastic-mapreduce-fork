@@ -117,6 +117,9 @@ module Commands
     def option(argument_name, argument_symbol, value)
       var = self.send(argument_symbol)
       if var == nil then
+        if argument_symbol.to_s == "cache" then
+          value = [value]
+        end
         self.send((argument_symbol.to_s + "=").to_sym, value)
       elsif var.is_a?(Array) then
         var << value
