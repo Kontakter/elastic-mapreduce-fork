@@ -1252,6 +1252,9 @@ module Commands
         "Steps" => [],
         "BootstrapActions" => [],
         "VisibleToAllUsers" => (get_field(:visible_to_all_users) ? "true" : "false"),
+        # TODO(ignat): move it to CLI options
+        "ServiceRole" => "EMR_DefaultRole",
+        "JobFlowRole" => "EMR_EC2_DefaultRole",
       }
       products_string = get_field(:with_supported_products)
       if products_string then
